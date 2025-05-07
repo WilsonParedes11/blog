@@ -20,6 +20,11 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
+<script setup>
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/AppFooter.vue'
+</script>
+
 <style scoped>
 header {
   line-height: 1.5;
