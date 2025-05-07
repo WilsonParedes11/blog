@@ -84,4 +84,11 @@ class PostController extends Controller
 
         return response()->json(['message' => 'Post eliminado correctamente']);
     }
+
+    public function getUserPosts()
+    {
+        $posts = auth()->user()->posts()->latest()->get();
+
+        return response()->json($posts);
+    }
 }
