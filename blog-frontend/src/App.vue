@@ -1,9 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/AppFooter.vue'
 </script>
 
 <template>
+  <AppHeader /> <!-- Usa AppHeader si es necesario, o elimina la sección <header> abajo -->
+
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
@@ -18,12 +22,9 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <RouterView />
-</template>
 
-<script setup>
-import AppHeader from '@/components/AppHeader.vue'
-import AppFooter from '@/components/AppFooter.vue'
-</script>
+  <AppFooter />
+</template>
 
 <style scoped>
 header {
@@ -82,7 +83,6 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }
