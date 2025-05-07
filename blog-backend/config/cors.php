@@ -17,7 +17,7 @@ return [
 
     'paths' => ['api/*'],
     'allowed_methods' => ['*'],
-    'allowed_origins' => ['http://localhost:5173'], // Cambia esto a la URL de tu frontend
+    'allowed_origins' => ['http://localhost:5174'], // Cambia esto a la URL de tu frontend
     'allowed_origins_patterns' => [],
     'allowed_headers' => ['*'],
     'exposed_headers' => [],
