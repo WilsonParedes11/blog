@@ -2,7 +2,7 @@
   <footer class="app-footer">
     <div class="footer-container">
       <p>Blog Simple - Creado con Laravel 12 y Vue.js</p>
-      <p>© {{ new Date().getFullYear() }}</p>
+      <p>© {{ new Date().getFullYear() }} Wilson Paredes</p>
     </div>
   </footer>
 </template>
