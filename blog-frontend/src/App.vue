@@ -1,90 +1,58 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import AppHeader from '@/components/AppHeader.vue'
-import AppFooter from '@/components/AppFooter.vue'
-</script>
-
 <template>
-  <AppHeader /> <!-- Usa AppHeader si es necesario, o elimina la sección <header> abajo -->
-
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-
-  <AppFooter />
+  <div class="app">
+    <AppHeader />
+    <main class="main-content">
+      <router-view />
+    </main>
+    <AppFooter />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<script setup>
+import AppHeader from '@/components/AppHeader.vue';
+import AppFooter from '@/components/AppFooter.vue';
+</script>
+
+<style>
+/* Estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
+.main-content {
+  min-height: calc(100vh - 160px);
+}
+
+h1, h2, h3 {
+  margin-bottom: 15px;
+}
+
+a {
+  color: #007bff;
+}
+
+.loading, .not-found {
   text-align: center;
-  margin-top: 2rem;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+/* Estilos para formularios */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+button {
+  cursor: pointer;
 }
 </style>
